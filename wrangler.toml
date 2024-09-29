@@ -1,0 +1,6 @@
+name = "cron"
+main = "index.js"
+compatibility_date = "2024-09-29"
+observability.enabled = true
+triggers.crons = ["* * * * *"] # every minute
+build.command = "./build.sh"
