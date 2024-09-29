@@ -1,22 +1,21 @@
 export default {
   fetch() {
     STARTED_AT ||= Date.now()
+
     return Response.json({
       BUILT_AT,
-      uptimeSeconds: uptimeSeconds(),
-      now: Date.now(),
-      date: new Date().toJSON()
+      uptimeSeconds: uptimeSeconds()
     })
   },
 
   scheduled(event) {
     STARTED_AT ||= Date.now()
+
     console.info({
-      event,
+      event, // { cron: "* * * * *", scheduledTime: 1727641771000 }
+      // scheduledTime rounds to the nearest minute
       BUILT_AT,
-      uptimeSeconds: uptimeSeconds(),
-      now: Date.now(),
-      date: new Date().toJSON()
+      uptimeSeconds: uptimeSeconds() // always 0 for scheduled
     })
   }
 }
